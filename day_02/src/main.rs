@@ -20,8 +20,8 @@ fn main() {
         input.push(s.trim().parse().unwrap());
     }
 
-    for j in input {
-        match j {
+    for (index, n) in input.iter().enumerate() {
+        match n {
             1 => {
 
             },
