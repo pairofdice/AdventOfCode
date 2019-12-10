@@ -14,7 +14,7 @@ fn main() {
         input.push((&n[0]).parse().unwrap());
     } */
 
-    let mut input: Vec<u32> = Vec::new();
+    let mut input: Vec<usize> = Vec::new();
     
     for s in contents.split(',') {
         input.push(s.trim().parse().unwrap());
@@ -23,7 +23,11 @@ fn main() {
     for (index, n) in input.iter().enumerate() {
         match n {
             1 => {
-
+                let i_a = input[index + 1];
+                let i_b = input[index + 2];
+                let o_index = input[index + 3];
+                let result = input[i_a] + input[i_b];
+                input[o_index] = result;
             },
             2 => {
 
