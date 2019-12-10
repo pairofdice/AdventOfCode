@@ -15,7 +15,7 @@ fn main() {
         input.push((&n[0]).parse().unwrap());
     }
 
-    for asdsf in input {
-        println!("{} {}", asdsf, asdsf*asdsf); // JEEEEEEEE
+    for n in input {
+        // Do things
     }
 }
