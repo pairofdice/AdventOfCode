@@ -19,22 +19,20 @@ fn main() {
     for s in contents.split(',') {
         input.push(s.trim().parse().unwrap());
     }
-    let input_copy = input.clone();
     
     for noun in 0..100 {
         for verb in 0..100 {
-            input = input_copy.clone();
+            let mut input_copy = input.clone();
             
-            input[1] = noun;
-            input[2] = verb;
-            if run(input)[0] == 19690720 {
+            input_copy[1] = noun;
+            input_copy[2] = verb;
+            if run(input_copy)[0] == 19690720 {
                 println!("noun: {}\t verb:{}", noun, verb);
                 println!("result?: {}{}", noun, verb);
                 break;
             }
         }
     }
-
 }
 
 fn run(mut input: Vec<u32>) -> Vec<u32> {
@@ -62,7 +60,6 @@ fn run(mut input: Vec<u32>) -> Vec<u32> {
                 let result = input[i_a] * input[i_b];
                 input[o_index] = result;
                 index += 4;
-
             },
             _ => (),
         }
