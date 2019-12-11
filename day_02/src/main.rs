@@ -14,20 +14,26 @@ fn main() {
         input.push((&n[0]).parse().unwrap());
     } */
 
-    let mut input: Vec<usize> = Vec::new();
+    let mut input: Vec<i32> = Vec::new();
     
     for s in contents.split(',') {
         input.push(s.trim().parse().unwrap());
     }
 
-    for (index, n) in input.iter().enumerate() {
-        match n {
+    let mut output: Vec<i32> = Vec::with_capacity(input.len());
+
+    let mut code = input[0];
+    let mut index = 0;
+    while code != 99 {
+        code = inpute[index];
+        match code {
             1 => {
-                let i_a = input[index + 1];
-                let i_b = input[index + 2];
-                let o_index = input[index + 3];
+                let i_a = input[index + 1] as usize;
+                let i_b = input[index + 2] as usize;
+                let o_index = input[index + 3] as usize;
                 let result = input[i_a] + input[i_b];
-                input[o_index] = result;
+                output[o_index] = result;
+                index += 4;
             },
             2 => {
 
@@ -38,6 +44,7 @@ fn main() {
             _ => (),
         }
     }
+    
 }
 
 
