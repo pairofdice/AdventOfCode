@@ -19,31 +19,37 @@ fn main() {
     for s in contents.split(',') {
         input.push(s.trim().parse().unwrap());
     }
-
-    let mut output: Vec<i32> = Vec::with_capacity(input.len());
+    
 
     let mut code = input[0];
     let mut index = 0;
+
     while code != 99 {
-        code = inpute[index];
+        code = input[index];
+
         match code {
             1 => {
                 let i_a = input[index + 1] as usize;
                 let i_b = input[index + 2] as usize;
                 let o_index = input[index + 3] as usize;
                 let result = input[i_a] + input[i_b];
-                output[o_index] = result;
+                input[o_index] = result;
                 index += 4;
             },
             2 => {
+                let i_a = input[index + 1] as usize;
+                let i_b = input[index + 2] as usize;
+                let o_index = input[index + 3] as usize;
+                let result = input[i_a] * input[i_b];
+                input[o_index] = result;
+                index += 4;
 
-            },
-            99 => {
-                break;
             },
             _ => (),
         }
     }
+
+    println!("{}", input[0]);
     
 }
 
