@@ -15,12 +15,19 @@ fn main() {
     } */
 
     let mut input: Vec<i32> = Vec::new();
+    let input_copy = input.clone();
     
     for s in contents.split(',') {
         input.push(s.trim().parse().unwrap());
     }
     
+    let input = run(input);
 
+
+    println!("{}", input[0]);
+}
+
+fn run(mut input: Vec<i32>) -> Vec<i32> {
     let mut code = input[0];
     let mut index = 0;
 
@@ -48,9 +55,7 @@ fn main() {
             _ => (),
         }
     }
-
-    println!("{}", input[0]);
-    
+    input
 }
 
 
