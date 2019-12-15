@@ -40,8 +40,6 @@ fn main() {
                     crossings.push((x, y));
                 }
             }
-            
-            println!("{}: {}", dir, len);
         }
     }
     
