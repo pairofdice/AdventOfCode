@@ -51,7 +51,7 @@ fn main() {
             min = manhattan_distance(c);
         }
     }
-    println!("{:?}", closest);
+    println!("Closest wire crossin to origin is: {:?}: {}", closest, min);
 }
 
 fn manhattan_distance((x, y): (i32, i32)) -> i32 {
