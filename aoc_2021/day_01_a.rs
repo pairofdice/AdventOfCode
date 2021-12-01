@@ -8,10 +8,7 @@ fn main() {
         let n = line.trim().parse().unwrap();
         darray.push(n);
     }
-    for (i, n) in darray.iter().enumerate() {
-        if i == 0 {
-            continue;
-        }
+    for (i, n) in darray.iter().enumerate().skip(1) {
         if darray[i - 1] < *n {
             counter += 1;
         }
