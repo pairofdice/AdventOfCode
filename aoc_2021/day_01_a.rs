@@ -20,11 +20,12 @@ fn part1(darray: Vec<i64>) -> i64 {
     counter
 }
 
-/* fn part2(darray: Vec<i64>) -> i64 {
+fn part2(darray: Vec<i64>) -> i64 {
 
-} */
+}
 
 fn main() {
     let darray = read_into_ints();
     println!("Part 1: {}", part1(darray));
+    println!("Part 2: {}", part2(darray));
 }
