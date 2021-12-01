@@ -10,8 +10,7 @@ fn read_into_ints() -> Vec<i64> {
     darray
 }
 
-fn part1() -> i64 {
-    let darray = read_into_ints();
+fn part1(darray: Vec<i64>) -> i64 {
     let mut counter = 0;
     for (i, n) in darray.iter().enumerate().skip(1) {
         if darray[i - 1] < *n {
@@ -21,7 +20,11 @@ fn part1() -> i64 {
     counter
 }
 
-fn main() {
+/* fn part2(darray: Vec<i64>) -> i64 {
 
-    println!("Part 1: {}", part1());
+} */
+
+fn main() {
+    let darray = read_into_ints();
+    println!("Part 1: {}", part1(darray));
 }
