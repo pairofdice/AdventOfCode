@@ -43,5 +43,4 @@ fn main() {
     let darray = read_into_ints();
     println!("Part 1: {}", part1(&darray));
     println!("Part 2: {}", part2(&darray));
-    // Fix for this nonsense?
 }
