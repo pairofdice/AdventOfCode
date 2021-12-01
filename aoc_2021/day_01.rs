@@ -21,11 +21,27 @@ fn part1(darray: Vec<i64>) -> i64 {
 }
 
 fn part2(darray: Vec<i64>) -> i64 {
-
+    let mut counter = 0;
+    let mut average: i64;
+    let mut bverage;
+    for (i, _n) in darray.iter().enumerate().skip(3) {
+        let s1 = (i - 3) as usize;
+        let e1 = (i - 1) as usize;
+        let s2 = (i - 2) as usize;
+        let e2 = (i - 0) as usize;
+        average = darray[s1..=e1].iter().sum();
+        bverage = darray[s2..=e2].iter().sum();
+        if average < bverage {
+            counter += 1;
+        }
+    }
+    counter
 }
 
 fn main() {
     let darray = read_into_ints();
     println!("Part 1: {}", part1(darray));
+    let darray = read_into_ints();
     println!("Part 2: {}", part2(darray));
+    // Fix for this nonsense?
 }
