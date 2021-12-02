@@ -1,6 +1,6 @@
 use std::fs;
 
-fn read() -> Vec<(String, i64)>{
+fn read() -> Vec<(String, i64)> {
     let data = fs::read_to_string("02.txt").expect("Error reading file");
     let mut darray: Vec<(String, i64)> = Vec::new();
     for line in data.lines() {
@@ -12,22 +12,37 @@ fn read() -> Vec<(String, i64)>{
         }
     }
     darray
-
 }
-
 
 fn main() {
     let array = read();
-    let mut x = 0;
-    let mut y = 0;
+    let mut depth = 0;
+    let mut depth_part2 = 0;
+    let mut pos = 0;
+    let mut aim = 0;
+
     for (a, b) in array.iter() {
         match a.as_str() {
-            "forward" => {x += b;}
-            "down" => {y += b;}
-            "up" => {y -= b;}
-            _ => ()
+            "forward" => {
+                pos += b;
+                depth_part2 += aim * b;
+            }
+            "down" => {
+                aim += b;
+                depth += b;
+            }
+            "up" => {
+                aim -= b;
+                depth -= b;
+            }
+            _ => (),
         }
     }
-    println!("Horizontal: {} Depth: {} Multiplied: {}", x, y, x * y);
-
+    println!(
+        "Part1, Horizontal: {} Depth: {} Multiplied: {} Part2: {}",
+        depth,
+        pos,
+        depth * pos,
+        depth_part2 * pos
+    );
 }
