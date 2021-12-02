@@ -37,8 +37,8 @@ fn main() {
     }
     println!(
         "Part1, Horizontal: {} Depth: {} Multiplied: {} Part2: {}",
-        depth,
         pos,
+        depth,
         depth * pos,
         depth_part2 * pos
     );
