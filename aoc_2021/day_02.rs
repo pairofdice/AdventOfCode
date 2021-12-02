@@ -36,10 +36,11 @@ fn main() {
         }
     }
     println!(
-        "Part1, Horizontal: {} Depth: {} Multiplied: {} Part2: {}",
+        "Part1, Horizontal: {0} Depth: {1} \tMultiplied: {2} \nPart2, Horizontal: {0} Depth: {3} \tMultiplied: {4}",
         pos,
         depth,
         depth * pos,
+        depth_part2,
         depth_part2 * pos
     );
 }
