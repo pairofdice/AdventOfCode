@@ -2,7 +2,7 @@ use std::fs;
 
 fn read() -> Vec<(String, i64)> {
     let data = fs::read_to_string("02.txt").expect("Error reading file");
-    let mut darray: Vec<(String, i64)> = Vec::new();
+    let mut darray: Vec<(String, i64)> = Vec::with_capacity(1000);
     for line in data.lines() {
         let mut split = line.split(' ');
         if let Some(s) = split.next() {
@@ -18,19 +18,19 @@ fn main() {
     let array = read();
     let (mut depth, mut depth_part2, mut pos, mut aim) = (0, 0, 0, 0);
 
-    for (a, b) in array.iter() {
-        match a.as_str() {
+    for (command, value) in array.iter() {
+        match command.as_str() {
             "forward" => {
-                pos += b;
-                depth_part2 += aim * b;
+                pos += value;
+                depth_part2 += aim * value;
             }
             "down" => {
-                aim += b;
-                depth += b;
+                aim += value;
+                depth += value;
             }
             "up" => {
-                aim -= b;
-                depth -= b;
+                aim -= value;
+                depth -= value;
             }
             _ => (),
         }
