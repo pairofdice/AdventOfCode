@@ -4,7 +4,7 @@ fn read() -> Vec<(String, i64)> {
     let data = fs::read_to_string("02.txt").expect("Error reading file");
     let mut darray: Vec<(String, i64)> = Vec::new();
     for line in data.lines() {
-        let mut split = line.trim().split(' ');
+        let mut split = line.split(' ');
         if let Some(s) = split.next() {
             if let Some(n) = split.next() {
                 darray.push((s.to_string(), n.parse().unwrap()));
@@ -16,10 +16,7 @@ fn read() -> Vec<(String, i64)> {
 
 fn main() {
     let array = read();
-    let mut depth = 0;
-    let mut depth_part2 = 0;
-    let mut pos = 0;
-    let mut aim = 0;
+    let (mut depth, mut depth_part2, mut pos, mut aim) = (0, 0, 0, 0);
 
     for (a, b) in array.iter() {
         match a.as_str() {
