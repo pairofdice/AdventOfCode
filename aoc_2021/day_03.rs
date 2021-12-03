@@ -5,10 +5,7 @@ The epsilon rate is calculated in a similar way; rather than use the most common
 */
 
 fn read() -> Vec<i32> {
-    include_str!("03.txt")
-        .lines()
-        .map(|line| i32::from_str_radix(line, 2).unwrap())
-        .collect()
+    include_str!("03.txt").lines().map(|line| i32::from_str_radix(line, 2).unwrap()).collect()
 }
 
 fn main() {
@@ -25,18 +22,9 @@ fn main() {
             mystery /= 2;
         }
     }
-    let gamma = i32::from_str_radix(
-        &omega
-            .map(|n: i32| (if n > 0 { 1 } else { 0 }).to_string())
-            .join(""), 2)
-            .unwrap();
+    let gamma = i32::from_str_radix(&omega.map(|n: i32| (if n > 0 { 1 } else { 0 }).to_string()).join(""), 2).unwrap();
 
     let epsilon = !gamma & 4095;
     
-    println!(
-        "Part1, gamma: {} epsilon: {} multiplied {}",
-        gamma,
-        epsilon,
-        gamma * epsilon
-    );
+    println!("Part1, gamma: {} epsilon: {} multiplied {}", gamma, epsilon, gamma * epsilon);
 }
