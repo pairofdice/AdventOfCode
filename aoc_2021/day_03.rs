@@ -25,7 +25,18 @@ fn main() {
             mystery /= 2;
         }
     }
-    let gamma =  i32::from_str_radix(&omega.map(|n: i32| (if n > 0 {1} else {0}).to_string()).join(""), 2).unwrap();
-    let epsilon =  !gamma & 4095;
-    println!("Part1, gamma: {} epsilon: {} multiplied {}", gamma, epsilon, gamma * epsilon);
+    let gamma = i32::from_str_radix(
+        &omega
+            .map(|n: i32| (if n > 0 { 1 } else { 0 }).to_string())
+            .join(""),
+        2,
+    )
+    .unwrap();
+    let epsilon = !gamma & 4095;
+    println!(
+        "Part1, gamma: {} epsilon: {} multiplied {}",
+        gamma,
+        epsilon,
+        gamma * epsilon
+    );
 }
