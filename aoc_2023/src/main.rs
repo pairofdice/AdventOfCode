@@ -1,10 +1,62 @@
-#[allow(dead_code)]
+#![allow(dead_code)]
 fn main() {
     println!("Hello, world!");
     // day01();
     // day02();
-    day03()
+    // day03()
+    day04();
 }
+
+fn day04() {
+    let mut total: u32 = 0;
+    let input: Vec<&str> = include_str!("../day04.txt").lines().collect();
+    let mut cards: Vec<(Vec<i32>, Vec<i32>)> = vec![];
+    for card in input {
+        let card_split: Vec<&str> = card.split('|').collect();
+        let winning_numbers: Vec<i32> = card_split
+            .get(0)
+            .unwrap()
+            .trim()
+            .split_whitespace()
+            .skip(2)
+            .map(|s| s.parse().unwrap_or(0))
+            .collect();
+
+        let chosen_numbers: Vec<i32> = card_split
+            .get(1)
+            .unwrap()
+            .trim()
+            .split_whitespace()
+            .map(|s| s.parse().unwrap_or(0))
+            .collect();
+        cards.push((winning_numbers, chosen_numbers));
+    }
+    // Parsing done
+
+    for card in &cards {
+        let mut count = 0;
+        let w_nums = &card.0;
+        let c_nums = &card.1;
+        for num in c_nums {
+
+
+            if w_nums.contains(&num) {
+                count += 1;
+            }
+        }
+        count = if count > 0 { 2_u32.pow(count - 1)} else { 0 }  as u32;
+        total += count;
+        println!("{count}{card:?}");
+    }
+    println!("Total: {total}");
+
+}
+
+
+
+
+
+
 
 fn day03() {
     let input: Vec<&str> = include_str!("../day03.txt").lines().collect();
@@ -97,7 +149,7 @@ fn find_symbols(s: &str) -> bool {
 }
 
 
-#[allow(dead_code)]
+
 fn day02() {
     let input: &str = include_str!("../day02.txt");
     let mut total = 0;
@@ -155,7 +207,6 @@ fn day02() {
     println!("Total: {total}, Power sum: {power_total}");
 }
 
-#[allow(dead_code)]
 fn day01() {
     let mut total: i64 = 0;
     let input = include_str!("../day01.txt");
