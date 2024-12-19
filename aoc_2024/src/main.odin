@@ -15,26 +15,13 @@ d2_record :: struct {
 
 main :: proc() {
 
-	input, ok := os.read_entire_file("data/input.txt")
+	// input, ok := os.read_entire_file("data/input.txt")
 	// input, ok := os.read_entire_file("data/tests.txt")
 	// input, ok := os.read_entire_file("data/testa.txt")
+	input, ok := os.read_entire_file("data/d19.txt")
 
 	if ok {
-		// day_4b(&input)
-		// day_5(&input)
-		// day_6(&input)
-		// day_7(&input)
-		// day_8(&input)
-		// day_9(&input)
-		// day_10(&input)
-		// day_11(&input)
-		// day_12(&input)
-		// day_13(&input)
-		// day_14(&input)
-		// day_15(&input)
-		// day_16(&input)
-		// day_17(&input)
-		day_18(&input)
+		day_19(&input)
 	} else do fmt.println("Fukt up reading file")
 
 }
