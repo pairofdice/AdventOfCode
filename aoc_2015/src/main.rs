@@ -6,7 +6,7 @@ mod day_2;
 fn main() {
 
     let mut input : Vec<String> = Vec::new();
-    if let Ok(lines) = read_lines("data/day_2t.txt") {
+    if let Ok(lines) = read_lines("data/day_2.txt") {
         for line in lines.flatten() {
             input.push(line);
         }
