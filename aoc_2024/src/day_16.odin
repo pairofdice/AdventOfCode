@@ -174,7 +174,7 @@ update_day16 :: proc(state : ^State16) {
 
 xy_in_list :: proc(node: XY, list: ^[dynamic]XY) -> bool {
 	for loc in list {
-		if loc.x == loc.x && loc.y == loc.y
+		if node.x == loc.x && node.y == loc.y
 		{
 			return true
 		}

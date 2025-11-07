@@ -4,7 +4,6 @@ use std::path::Path;
 mod day_2;
 
 fn main() {
-
     let mut input : Vec<String> = Vec::new();
     if let Ok(lines) = read_lines("data/day_2.txt") {
         for line in lines.flatten() {
@@ -21,4 +20,3 @@ where P: AsRef<Path>, {
     let file = File::open(filename)?;
     Ok(io::BufReader::new(file).lines())
 }
-

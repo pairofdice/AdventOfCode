@@ -14,20 +14,13 @@ d2_record :: struct {
 
 
 main :: proc() {
-
-	// input, ok := os.read_entire_file("data/input.txt")
-	// input, ok := os.read_entire_file("data/tests.txt")
-	// input, ok := os.read_entire_file("data/testa.txt")
-	input, ok := os.read_entire_file("data/d19.txt")
-
+	input, ok := os.read_entire_file("data/d23.txt")
 	if ok {
-		day_19(&input)
+		day_23(&input)
 	} else do fmt.println("Fukt up reading file")
-
 }
 
 parse_num :: proc(str: []u8) -> int {
-
 	result, ok := strconv.parse_int(string(str))
 	return result
 
