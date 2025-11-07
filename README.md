@@ -1,1 +1,2 @@
-Learning Rust through the magic of christmas
+Odin: 2024
+Rust: The rest
