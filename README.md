@@ -1,2 +1,3 @@
-Odin: 2024
-Rust: The rest
+2025: Advent of C++!
+2024: Odin
+The rest: Rust
